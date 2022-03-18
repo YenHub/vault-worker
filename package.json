@@ -13,7 +13,7 @@
     "prepublishOnly": "yarn lint:pretty",
     "preversion": "yarn lint:pretty",
     "postversion": "git push && git push --tags",
-    "package:version": "yarn version && yarn add .",
+    "package:version": "yarn version && git add .",
     "package:publish": "yarn publish --access public",
     "lint:pretty": "eslint ./src/** --fix && prettier --write ./src"
   },
