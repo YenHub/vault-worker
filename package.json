@@ -1,0 +1,35 @@
+{
+  "name": "@yenhub/vault-worker",
+  "version": "1.0.0",
+  "description": "A secure storage implementation using WebWorker and MessageChannels",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": "https://github.com/YenHub/vault-worker",
+  "author": "YenHub",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn lint:pretty",
+    "preversion": "yarn lint:pretty",
+    "postversion": "git push && git push --tags",
+    "package:version": "yarn version && yarn add .",
+    "package:publish": "yarn publish --access public",
+    "lint:pretty": "eslint ./src/** --fix && prettier --write ./src"
+  },
+  "keywords": [
+    "secure storage",
+    "WebWorker",
+    "MessageChannels"
+  ],
+  "files": [
+    "lib/**/*"
+  ],
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.15.0",
+    "@typescript-eslint/parser": "^5.15.0",
+    "eslint": "^8.11.0",
+    "prettier": "^2.6.0",
+    "typescript": "^4.6.2"
+  }
+}
